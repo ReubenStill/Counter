@@ -19,29 +19,10 @@
   
   .counter {
     text-align: center;
-    position: relative;
-    overflow: hidden;
   }
   
   .counter h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 60px;
-    z-index: 1;
-    pointer-events: none;
-  }
-  
-  .counter-bg {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 100%;
-    height: 200%;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8));
-    z-index: 0;
-    pointer-events: none;
   }
   
   .counter button {
@@ -72,7 +53,6 @@
 </head>
 <body>
 <div class="counter">
-  <div class="counter-bg"></div>
   <h1>Counter!</h1>
   <p id="count" style="font-size: 48px;">0</p>
   <button id="increment" style="font-size: 28px;">Increment</button>
@@ -117,13 +97,6 @@
     setTimeout(() => {
       resetButton.classList.remove('clicked');
     }, 100);
-  });
-
-  // Parallax scrolling effect
-  window.addEventListener('scroll', function() {
-    const yOffset = window.pageYOffset;
-    const parallaxElement = document.querySelector('.counter h1');
-    parallaxElement.style.transform = 'translate(-50%, ' + yOffset * 0.5 + 'px)';
   });
 </script>
 </body>
